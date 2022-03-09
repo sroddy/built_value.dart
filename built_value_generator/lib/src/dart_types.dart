@@ -65,16 +65,17 @@ class DartTypes {
           ')$suffix';
     } else if (dartType is InterfaceType) {
       var typeArguments = dartType.typeArguments;
+      final elementName = dartType.alias?.element?.name ?? dartType.element.name;
       if (typeArguments.isEmpty) {
         return dartType.element.name + suffix;
       } else {
         final typeArgumentsStr = typeArguments
             .map((type) => getName(type, withNullabilitySuffix: true))
             .join(', ');
-        return '${dartType.element.name}<$typeArgumentsStr>$suffix';
+        return '$elementName<$typeArgumentsStr>$suffix';
       }
     } else if (dartType is TypeParameterType) {
-      return dartType.element.name + suffix;
+      return (dartType.alias?.element?.name ?? dartType.element.name) + suffix;
     } else if (dartType.isVoid) {
       return 'void';
     } else {
