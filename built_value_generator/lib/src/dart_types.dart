@@ -56,7 +56,7 @@ class DartTypes {
         ? '?'
         : '';
 
-    final elementName = dartType.alias?.element?.name ?? dartType.element.name;
+    final elementName = () => dartType.alias?.element?.name ?? dartType.element.name;
 
     if (dartType.isDynamic) {
       return 'dynamic';
@@ -68,15 +68,15 @@ class DartTypes {
     } else if (dartType is InterfaceType) {
       var typeArguments = dartType.typeArguments;
       if (typeArguments.isEmpty) {
-        return elementName + suffix;
+        return elementName() + suffix;
       } else {
         final typeArgumentsStr = typeArguments
             .map((type) => getName(type, withNullabilitySuffix: true))
             .join(', ');
-        return '$elementName<$typeArgumentsStr>$suffix';
+        return '${elementName()}<$typeArgumentsStr>$suffix';
       }
     } else if (dartType is TypeParameterType) {
-      return elementName + suffix;
+      return elementName() + suffix;
     } else if (dartType.isVoid) {
       return 'void';
     } else {
