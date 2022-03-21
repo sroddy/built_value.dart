@@ -29,12 +29,12 @@ class DartTypes {
 
   static bool isBuiltValue(DartType type) =>
       type is InterfaceType &&
-      type.element.allSupertypes
-          .any((interfaceType) => interfaceType.element.name == 'Built');
+          type.element.allSupertypes
+              .any((interfaceType) => interfaceType.element.name == 'Built');
 
   static bool isBuiltCollection(DartType type) {
     return _builtCollectionNames
-        .any((name) => getName(type).startsWith('$name<'));
+        .any((name) => getName(type, resolveAlias: false).startsWith('$name<'));
   }
 
   static bool isBuilt(DartType type) =>
@@ -46,17 +46,17 @@ class DartTypes {
   /// Gets the name of a `DartType`. Supports `Function` types, which will
   /// be returned using the `Function()` syntax.
   static String getName(DartType dartType,
-      {bool withNullabilitySuffix = false}) {
+      {bool withNullabilitySuffix = false, bool resolveAlias = true}) {
     if (dartType == null) {
       return null;
     }
 
     var suffix = withNullabilitySuffix &&
-            dartType.nullabilitySuffix == NullabilitySuffix.question
+        dartType.nullabilitySuffix == NullabilitySuffix.question
         ? '?'
         : '';
 
-    final elementName = () => dartType.alias?.element?.name ?? dartType.element.name;
+    final elementName = () => (resolveAlias ? dartType.alias?.element?.name : null) ?? dartType.element.name;
 
     if (dartType.isDynamic) {
       return 'dynamic';
