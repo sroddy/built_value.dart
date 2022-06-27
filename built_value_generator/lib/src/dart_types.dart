@@ -62,7 +62,7 @@ class DartTypes {
         ? '?'
         : '';
 
-    late final elementName = (resolveAlias ? dartType.alias?.element?.name : null) ?? dartType.element.name;
+    late final elementName = (resolveAlias ? dartType.alias?.element?.name : null) ?? dartType.element!.name!;
 
     if (dartType.isDynamic) {
       return 'dynamic';
