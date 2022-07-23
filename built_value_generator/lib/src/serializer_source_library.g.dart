@@ -1,5 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// @dart=2.11
 
 part of built_value_generator.source_library;
 
@@ -10,22 +9,22 @@ part of built_value_generator.source_library;
 class _$SerializerSourceLibrary extends SerializerSourceLibrary {
   @override
   final LibraryElement element;
-  ParsedLibraryResult __parsedLibrary;
-  bool __hasSerializers;
-  BuiltMap<String, ElementAnnotation> __serializersForAnnotations;
-  BuiltList<String> __wrongSerializersDeclarations;
-  BuiltSet<SerializerSourceClass> __sourceClasses;
-  BuiltSetMultimap<String, SerializerSourceClass> __serializeForClasses;
-  BuiltSetMultimap<String, SerializerSourceClass>
+  ParsedLibraryResult? __parsedLibrary;
+  bool? __hasSerializers;
+  BuiltMap<String, ElementAnnotation>? __serializersForAnnotations;
+  BuiltList<String>? __wrongSerializersDeclarations;
+  BuiltSet<SerializerSourceClass>? __sourceClasses;
+  BuiltSetMultimap<String, SerializerSourceClass>? __serializeForClasses;
+  BuiltSetMultimap<String, SerializerSourceClass>?
       __serializeForTransitiveClasses;
 
   factory _$SerializerSourceLibrary(
-          [void Function(SerializerSourceLibraryBuilder) updates]) =>
-      (new SerializerSourceLibraryBuilder()..update(updates)).build();
+          [void Function(SerializerSourceLibraryBuilder)? updates]) =>
+      (new SerializerSourceLibraryBuilder()..update(updates))._build();
 
-  _$SerializerSourceLibrary._({this.element}) : super._() {
+  _$SerializerSourceLibrary._({required this.element}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        element, 'SerializerSourceLibrary', 'element');
+        element, r'SerializerSourceLibrary', 'element');
   }
 
   @override
@@ -78,7 +77,7 @@ class _$SerializerSourceLibrary extends SerializerSourceLibrary {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('SerializerSourceLibrary')
+    return (newBuiltValueToStringHelper(r'SerializerSourceLibrary')
           ..add('element', element))
         .toString();
   }
@@ -87,11 +86,11 @@ class _$SerializerSourceLibrary extends SerializerSourceLibrary {
 class SerializerSourceLibraryBuilder
     implements
         Builder<SerializerSourceLibrary, SerializerSourceLibraryBuilder> {
-  _$SerializerSourceLibrary _$v;
+  _$SerializerSourceLibrary? _$v;
 
-  LibraryElement _element;
-  LibraryElement get element => _$this._element;
-  set element(LibraryElement element) => _$this._element = element;
+  LibraryElement? _element;
+  LibraryElement? get element => _$this._element;
+  set element(LibraryElement? element) => _$this._element = element;
 
   SerializerSourceLibraryBuilder();
 
@@ -111,19 +110,21 @@ class SerializerSourceLibraryBuilder
   }
 
   @override
-  void update(void Function(SerializerSourceLibraryBuilder) updates) {
+  void update(void Function(SerializerSourceLibraryBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$SerializerSourceLibrary build() {
+  SerializerSourceLibrary build() => _build();
+
+  _$SerializerSourceLibrary _build() {
     final _$result = _$v ??
         new _$SerializerSourceLibrary._(
             element: BuiltValueNullFieldError.checkNotNull(
-                element, 'SerializerSourceLibrary', 'element'));
+                element, r'SerializerSourceLibrary', 'element'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

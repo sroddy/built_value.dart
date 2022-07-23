@@ -64,6 +64,28 @@ void main() {
   group('BoundGenericValue', () {
     test('can be instantiated', () {
       BoundGenericValue<int>((b) => b.value = 0);
+      BoundGenericValue<int>((b) => b
+        ..value = 0
+        ..nullableValue = 1);
+    });
+  });
+
+  group('BoundNullableGenericValue', () {
+    test('can be instantiated', () {
+      BoundNullableGenericValue<int>((b) => b.value = 1);
+      BoundNullableGenericValue<int>((b) => b
+        ..value = 1
+        ..nullableValue = 2);
+      BoundNullableGenericValue<int?>();
+      BoundNullableGenericValue<int?>((b) => b.value = 1);
+      BoundNullableGenericValue<int?>((b) => b
+        ..value = 1
+        ..nullableValue = 2);
+    });
+
+    test('throws on null for non-nullable fields on build', () {
+      expect(() => BoundNullableGenericValue<int>(),
+          throwsA(const TypeMatcher<BuiltValueNullFieldError>()));
     });
   });
 

@@ -178,7 +178,7 @@ class _$Collections extends Collections {
   final BuiltSetMultimap<String, bool> nullableSetMultimap;
 
   factory _$Collections([void Function(CollectionsBuilder) updates]) =>
-      (new CollectionsBuilder()..update(updates)).build();
+      (new CollectionsBuilder()..update(updates))._build();
 
   _$Collections._(
       {this.list,
@@ -192,13 +192,13 @@ class _$Collections extends Collections {
       this.nullableListMultimap,
       this.nullableSetMultimap})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(list, 'Collections', 'list');
-    BuiltValueNullFieldError.checkNotNull(set, 'Collections', 'set');
-    BuiltValueNullFieldError.checkNotNull(map, 'Collections', 'map');
+    BuiltValueNullFieldError.checkNotNull(list, r'Collections', 'list');
+    BuiltValueNullFieldError.checkNotNull(set, r'Collections', 'set');
+    BuiltValueNullFieldError.checkNotNull(map, r'Collections', 'map');
     BuiltValueNullFieldError.checkNotNull(
-        listMultimap, 'Collections', 'listMultimap');
+        listMultimap, r'Collections', 'listMultimap');
     BuiltValueNullFieldError.checkNotNull(
-        setMultimap, 'Collections', 'setMultimap');
+        setMultimap, r'Collections', 'setMultimap');
   }
 
   @override
@@ -246,7 +246,7 @@ class _$Collections extends Collections {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Collections')
+    return (newBuiltValueToStringHelper(r'Collections')
           ..add('list', list)
           ..add('set', set)
           ..add('map', map)
@@ -353,7 +353,9 @@ class CollectionsBuilder implements Builder<Collections, CollectionsBuilder> {
   }
 
   @override
-  _$Collections build() {
+  Collections build() => _build();
+
+  _$Collections _build() {
     _$Collections _$result;
     try {
       _$result = _$v ??
@@ -393,7 +395,7 @@ class CollectionsBuilder implements Builder<Collections, CollectionsBuilder> {
         _nullableSetMultimap?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'Collections', _$failedField, e.toString());
+            r'Collections', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -402,4 +404,4 @@ class CollectionsBuilder implements Builder<Collections, CollectionsBuilder> {
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

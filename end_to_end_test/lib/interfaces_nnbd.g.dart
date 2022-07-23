@@ -149,11 +149,11 @@ class _$ValueWithInt extends ValueWithInt {
   final String note;
 
   factory _$ValueWithInt([void Function(ValueWithIntBuilder)? updates]) =>
-      (new ValueWithIntBuilder()..update(updates)).build();
+      (new ValueWithIntBuilder()..update(updates))._build();
 
   _$ValueWithInt._({required this.anInt, required this.note}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(anInt, 'ValueWithInt', 'anInt');
-    BuiltValueNullFieldError.checkNotNull(note, 'ValueWithInt', 'note');
+    BuiltValueNullFieldError.checkNotNull(anInt, r'ValueWithInt', 'anInt');
+    BuiltValueNullFieldError.checkNotNull(note, r'ValueWithInt', 'note');
   }
 
   @override
@@ -176,7 +176,7 @@ class _$ValueWithInt extends ValueWithInt {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ValueWithInt')
+    return (newBuiltValueToStringHelper(r'ValueWithInt')
           ..add('anInt', anInt)
           ..add('note', note))
         .toString();
@@ -219,13 +219,15 @@ class ValueWithIntBuilder
   }
 
   @override
-  _$ValueWithInt build() {
+  ValueWithInt build() => _build();
+
+  _$ValueWithInt _build() {
     final _$result = _$v ??
         new _$ValueWithInt._(
             anInt: BuiltValueNullFieldError.checkNotNull(
-                anInt, 'ValueWithInt', 'anInt'),
+                anInt, r'ValueWithInt', 'anInt'),
             note: BuiltValueNullFieldError.checkNotNull(
-                note, 'ValueWithInt', 'note'));
+                note, r'ValueWithInt', 'note'));
     replace(_$result);
     return _$result;
   }
@@ -236,10 +238,10 @@ class _$ValueWithHasInt extends ValueWithHasInt {
   final HasInt hasInt;
 
   factory _$ValueWithHasInt([void Function(ValueWithHasIntBuilder)? updates]) =>
-      (new ValueWithHasIntBuilder()..update(updates)).build();
+      (new ValueWithHasIntBuilder()..update(updates))._build();
 
   _$ValueWithHasInt._({required this.hasInt}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(hasInt, 'ValueWithHasInt', 'hasInt');
+    BuiltValueNullFieldError.checkNotNull(hasInt, r'ValueWithHasInt', 'hasInt');
   }
 
   @override
@@ -263,7 +265,7 @@ class _$ValueWithHasInt extends ValueWithHasInt {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ValueWithHasInt')
+    return (newBuiltValueToStringHelper(r'ValueWithHasInt')
           ..add('hasInt', hasInt))
         .toString();
   }
@@ -300,14 +302,16 @@ class ValueWithHasIntBuilder
   }
 
   @override
-  _$ValueWithHasInt build() {
+  ValueWithHasInt build() => _build();
+
+  _$ValueWithHasInt _build() {
     final _$result = _$v ??
         new _$ValueWithHasInt._(
             hasInt: BuiltValueNullFieldError.checkNotNull(
-                hasInt, 'ValueWithHasInt', 'hasInt'));
+                hasInt, r'ValueWithHasInt', 'hasInt'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

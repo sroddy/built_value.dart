@@ -47,10 +47,27 @@ abstract class BoundGenericValue<T extends num>
       _$boundGenericValueSerializer;
 
   T get value;
+  T? get nullableValue;
 
   factory BoundGenericValue([Function(BoundGenericValueBuilder<T>) updates]) =
       _$BoundGenericValue<T>;
   BoundGenericValue._();
+}
+
+abstract class BoundNullableGenericValue<T extends num?>
+    implements
+        Built<BoundNullableGenericValue<T>,
+            BoundNullableGenericValueBuilder<T>> {
+  static Serializer<BoundNullableGenericValue> get serializer =>
+      _$boundNullableGenericValueSerializer;
+
+  T get value;
+  T? get nullableValue;
+
+  factory BoundNullableGenericValue(
+          [Function(BoundNullableGenericValueBuilder<T>) updates]) =
+      _$BoundNullableGenericValue<T>;
+  BoundNullableGenericValue._();
 }
 
 abstract class CollectionGenericValue<T>
@@ -191,4 +208,18 @@ abstract class EmptyGeneric<K, V>
   EmptyGeneric._();
   static Serializer<EmptyGeneric<Object?, Object?>> get serializer =>
       _$emptyGenericSerializer;
+}
+
+// To check generation of `FullType` in serializer when first param can be
+// const but second can't.
+abstract class ConstAndGeneric<T>
+    implements Built<ConstAndGeneric<T>, ConstAndGenericBuilder<T>> {
+  static Serializer<ConstAndGeneric<Object?>> get serializer =>
+      _$constAndGenericSerializer;
+
+  factory ConstAndGeneric([void Function(ConstAndGenericBuilder<T>) updates]) =
+      _$ConstAndGeneric<T>;
+  ConstAndGeneric._();
+
+  BuiltMap<String, T> get map;
 }

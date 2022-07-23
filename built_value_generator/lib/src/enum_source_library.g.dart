@@ -1,5 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// @dart=2.11
 
 part of built_value_generator.enum_source_library;
 
@@ -10,19 +9,19 @@ part of built_value_generator.enum_source_library;
 class _$EnumSourceLibrary extends EnumSourceLibrary {
   @override
   final LibraryElement element;
-  ParsedLibraryResult __parsedLibrary;
-  String __name;
-  String __fileName;
-  String __source;
-  BuiltList<EnumSourceClass> __classes;
+  ParsedLibraryResult? __parsedLibrary;
+  String? __name;
+  String? __fileName;
+  String? __source;
+  BuiltList<EnumSourceClass>? __classes;
 
   factory _$EnumSourceLibrary(
-          [void Function(EnumSourceLibraryBuilder) updates]) =>
-      (new EnumSourceLibraryBuilder()..update(updates)).build();
+          [void Function(EnumSourceLibraryBuilder)? updates]) =>
+      (new EnumSourceLibraryBuilder()..update(updates))._build();
 
-  _$EnumSourceLibrary._({this.element}) : super._() {
+  _$EnumSourceLibrary._({required this.element}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        element, 'EnumSourceLibrary', 'element');
+        element, r'EnumSourceLibrary', 'element');
   }
 
   @override
@@ -62,7 +61,7 @@ class _$EnumSourceLibrary extends EnumSourceLibrary {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('EnumSourceLibrary')
+    return (newBuiltValueToStringHelper(r'EnumSourceLibrary')
           ..add('element', element))
         .toString();
   }
@@ -70,11 +69,11 @@ class _$EnumSourceLibrary extends EnumSourceLibrary {
 
 class EnumSourceLibraryBuilder
     implements Builder<EnumSourceLibrary, EnumSourceLibraryBuilder> {
-  _$EnumSourceLibrary _$v;
+  _$EnumSourceLibrary? _$v;
 
-  LibraryElement _element;
-  LibraryElement get element => _$this._element;
-  set element(LibraryElement element) => _$this._element = element;
+  LibraryElement? _element;
+  LibraryElement? get element => _$this._element;
+  set element(LibraryElement? element) => _$this._element = element;
 
   EnumSourceLibraryBuilder();
 
@@ -94,19 +93,21 @@ class EnumSourceLibraryBuilder
   }
 
   @override
-  void update(void Function(EnumSourceLibraryBuilder) updates) {
+  void update(void Function(EnumSourceLibraryBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$EnumSourceLibrary build() {
+  EnumSourceLibrary build() => _build();
+
+  _$EnumSourceLibrary _build() {
     final _$result = _$v ??
         new _$EnumSourceLibrary._(
             element: BuiltValueNullFieldError.checkNotNull(
-                element, 'EnumSourceLibrary', 'element'));
+                element, r'EnumSourceLibrary', 'element'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

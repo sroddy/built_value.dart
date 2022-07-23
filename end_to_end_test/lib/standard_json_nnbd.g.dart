@@ -282,7 +282,7 @@ class _$StandardJsonValue extends StandardJsonValue {
 
   factory _$StandardJsonValue(
           [void Function(StandardJsonValueBuilder)? updates]) =>
-      (new StandardJsonValueBuilder()..update(updates)).build();
+      (new StandardJsonValueBuilder()..update(updates))._build();
 
   _$StandardJsonValue._(
       {required this.number,
@@ -299,22 +299,22 @@ class _$StandardJsonValue extends StandardJsonValue {
       required this.objects})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        number, 'StandardJsonValue', 'number');
-    BuiltValueNullFieldError.checkNotNull(text, 'StandardJsonValue', 'text');
-    BuiltValueNullFieldError.checkNotNull(value, 'StandardJsonValue', 'value');
+        number, r'StandardJsonValue', 'number');
+    BuiltValueNullFieldError.checkNotNull(text, r'StandardJsonValue', 'text');
+    BuiltValueNullFieldError.checkNotNull(value, r'StandardJsonValue', 'value');
     BuiltValueNullFieldError.checkNotNull(
-        keyValues, 'StandardJsonValue', 'keyValues');
-    BuiltValueNullFieldError.checkNotNull(zoo, 'StandardJsonValue', 'zoo');
+        keyValues, r'StandardJsonValue', 'keyValues');
+    BuiltValueNullFieldError.checkNotNull(zoo, r'StandardJsonValue', 'zoo');
     BuiltValueNullFieldError.checkNotNull(
-        uniqueZoo, 'StandardJsonValue', 'uniqueZoo');
+        uniqueZoo, r'StandardJsonValue', 'uniqueZoo');
     BuiltValueNullFieldError.checkNotNull(
-        nullsInList, 'StandardJsonValue', 'nullsInList');
+        nullsInList, r'StandardJsonValue', 'nullsInList');
     BuiltValueNullFieldError.checkNotNull(
-        nullsInSet, 'StandardJsonValue', 'nullsInSet');
+        nullsInSet, r'StandardJsonValue', 'nullsInSet');
     BuiltValueNullFieldError.checkNotNull(
-        nullsInMap, 'StandardJsonValue', 'nullsInMap');
+        nullsInMap, r'StandardJsonValue', 'nullsInMap');
     BuiltValueNullFieldError.checkNotNull(
-        objects, 'StandardJsonValue', 'objects');
+        objects, r'StandardJsonValue', 'objects');
   }
 
   @override
@@ -371,7 +371,7 @@ class _$StandardJsonValue extends StandardJsonValue {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('StandardJsonValue')
+    return (newBuiltValueToStringHelper(r'StandardJsonValue')
           ..add('number', number)
           ..add('text', text)
           ..add('value', value)
@@ -485,15 +485,17 @@ class StandardJsonValueBuilder
   }
 
   @override
-  _$StandardJsonValue build() {
+  StandardJsonValue build() => _build();
+
+  _$StandardJsonValue _build() {
     _$StandardJsonValue _$result;
     try {
       _$result = _$v ??
           new _$StandardJsonValue._(
               number: BuiltValueNullFieldError.checkNotNull(
-                  number, 'StandardJsonValue', 'number'),
+                  number, r'StandardJsonValue', 'number'),
               text: BuiltValueNullFieldError.checkNotNull(
-                  text, 'StandardJsonValue', 'text'),
+                  text, r'StandardJsonValue', 'text'),
               value: value.build(),
               keyValues: keyValues.build(),
               zoo: zoo.build(),
@@ -528,7 +530,7 @@ class StandardJsonValueBuilder
         objects.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'StandardJsonValue', _$failedField, e.toString());
+            r'StandardJsonValue', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -552,7 +554,7 @@ class _$ComplexValue extends ComplexValue {
   final SimpleValue? nullableValueDoNotUse;
 
   factory _$ComplexValue([void Function(ComplexValueBuilder)? updates]) =>
-      (new ComplexValueBuilder()..update(updates)).build();
+      (new ComplexValueBuilder()..update(updates))._build();
 
   _$ComplexValue._(
       {required this.primitive,
@@ -563,8 +565,8 @@ class _$ComplexValue extends ComplexValue {
       this.nullableValueDoNotUse})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        primitive, 'ComplexValue', 'primitive');
-    BuiltValueNullFieldError.checkNotNull(value, 'ComplexValue', 'value');
+        primitive, r'ComplexValue', 'primitive');
+    BuiltValueNullFieldError.checkNotNull(value, r'ComplexValue', 'value');
   }
 
   @override
@@ -600,7 +602,7 @@ class _$ComplexValue extends ComplexValue {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ComplexValue')
+    return (newBuiltValueToStringHelper(r'ComplexValue')
           ..add('primitive', primitive)
           ..add('nullablePrimitive', nullablePrimitive)
           ..add('nullablePrimitiveDoNotUse', nullablePrimitiveDoNotUse)
@@ -673,13 +675,15 @@ class ComplexValueBuilder
   }
 
   @override
-  _$ComplexValue build() {
+  ComplexValue build() => _build();
+
+  _$ComplexValue _build() {
     _$ComplexValue _$result;
     try {
       _$result = _$v ??
           new _$ComplexValue._(
               primitive: BuiltValueNullFieldError.checkNotNull(
-                  primitive, 'ComplexValue', 'primitive'),
+                  primitive, r'ComplexValue', 'primitive'),
               nullablePrimitive: nullablePrimitive,
               nullablePrimitiveDoNotUse: nullablePrimitiveDoNotUse,
               value: value.build(),
@@ -696,7 +700,7 @@ class ComplexValueBuilder
         _nullableValueDoNotUse?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'ComplexValue', _$failedField, e.toString());
+            r'ComplexValue', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -705,4 +709,4 @@ class ComplexValueBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

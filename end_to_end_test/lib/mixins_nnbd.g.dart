@@ -33,10 +33,10 @@ class _$UsesMixin extends UsesMixin {
   final String Function(String) typeDef;
 
   factory _$UsesMixin([void Function(UsesMixinBuilder)? updates]) =>
-      (new UsesMixinBuilder()..update(updates)).build();
+      (new UsesMixinBuilder()..update(updates))._build();
 
   _$UsesMixin._({required this.typeDef}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(typeDef, 'UsesMixin', 'typeDef');
+    BuiltValueNullFieldError.checkNotNull(typeDef, r'UsesMixin', 'typeDef');
   }
 
   @override
@@ -60,7 +60,7 @@ class _$UsesMixin extends UsesMixin {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('UsesMixin')..add('typeDef', typeDef))
+    return (newBuiltValueToStringHelper(r'UsesMixin')..add('typeDef', typeDef))
         .toString();
   }
 }
@@ -95,11 +95,13 @@ class UsesMixinBuilder implements Builder<UsesMixin, UsesMixinBuilder> {
   }
 
   @override
-  _$UsesMixin build() {
+  UsesMixin build() => _build();
+
+  _$UsesMixin _build() {
     final _$result = _$v ??
         new _$UsesMixin._(
             typeDef: BuiltValueNullFieldError.checkNotNull(
-                typeDef, 'UsesMixin', 'typeDef'));
+                typeDef, r'UsesMixin', 'typeDef'));
     replace(_$result);
     return _$result;
   }
@@ -111,11 +113,11 @@ class _$GetsCorrectFieldsViaMixins extends GetsCorrectFieldsViaMixins {
 
   factory _$GetsCorrectFieldsViaMixins(
           [void Function(GetsCorrectFieldsViaMixinsBuilder)? updates]) =>
-      (new GetsCorrectFieldsViaMixinsBuilder()..update(updates)).build();
+      (new GetsCorrectFieldsViaMixinsBuilder()..update(updates))._build();
 
   _$GetsCorrectFieldsViaMixins._({required this.shouldBeAField}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        shouldBeAField, 'GetsCorrectFieldsViaMixins', 'shouldBeAField');
+        shouldBeAField, r'GetsCorrectFieldsViaMixins', 'shouldBeAField');
   }
 
   @override
@@ -141,7 +143,7 @@ class _$GetsCorrectFieldsViaMixins extends GetsCorrectFieldsViaMixins {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('GetsCorrectFieldsViaMixins')
+    return (newBuiltValueToStringHelper(r'GetsCorrectFieldsViaMixins')
           ..add('shouldBeAField', shouldBeAField))
         .toString();
   }
@@ -180,16 +182,18 @@ class GetsCorrectFieldsViaMixinsBuilder
   }
 
   @override
-  _$GetsCorrectFieldsViaMixins build() {
+  GetsCorrectFieldsViaMixins build() => _build();
+
+  _$GetsCorrectFieldsViaMixins _build() {
     final _$result = _$v ??
         new _$GetsCorrectFieldsViaMixins._(
             shouldBeAField: BuiltValueNullFieldError.checkNotNull(
                 shouldBeAField,
-                'GetsCorrectFieldsViaMixins',
+                r'GetsCorrectFieldsViaMixins',
                 'shouldBeAField'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

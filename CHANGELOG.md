@@ -1,8 +1,47 @@
 # Changelog
 
-# 8.2.0 (unreleased)
+# 8.3.3
 
-- Make generator output additional explicit null checks so the generated code complies with the cast_nullable_to_non_nullable lint.
+- Fix erroneously generated null check for fields with generic bounds.
+
+# 8.3.2
+
+- Migrate `built_value_test` to null safety.
+
+# 8.3.1
+
+- Fix generation support for optional generic bounds, e.g. 
+  `class Foo<T extends Object?>`.
+- Fix generation for classes with names starting `$`.
+- Ignore lint `unnecessary_lambdas` in generated code.
+
+# 8.3.0
+
+- Change generated `build` methods to return only public types, creating
+  `_build` methods that return the generated impl types. This means dartdoc
+  will no longer reference the generated types.
+- Ignore the `no_leading_underscores_for_local_identifiers` lint in generated
+  code.
+- Migrated `built_value_generator` to null safety. This is purely an internal
+  change, the generator can still generate legacy code as and when needed.
+
+# 8.2.3
+
+- Bug fix: fix a corner case with generics that had incorrect serializer generation.
+
+# 8.2.2
+
+- Bug fix: remove a `print` from the enum generator.
+
+# 8.2.1
+
+- Fix deps: allow `built_value_generator` to use `built_value 8.2.0`.
+
+# 8.2.0
+
+- Allow writing final parameters in EnumClass constructor and valueOf method.
+- Make generator output additional explicit null checks so the generated code complies with the `cast_nullable_to_non_nullable` lint.
+- Bump version of `analyzer`.
 
 # 8.1.4
 

@@ -20,24 +20,24 @@ class _$SimpleValue extends SimpleValue {
   @override
   final BuiltSetMultimap<int, bool> setMultimap;
 
-  factory _$SimpleValue([void Function(SimpleValueBuilder) updates]) =>
-      (new SimpleValueBuilder()..update(updates)).build();
+  factory _$SimpleValue([void Function(SimpleValueBuilder)? updates]) =>
+      (new SimpleValueBuilder()..update(updates))._build();
 
   _$SimpleValue._(
-      {this.anInt,
-      this.list,
-      this.multimap,
-      this.map,
-      this.aSet,
-      this.setMultimap})
+      {required this.anInt,
+      required this.list,
+      required this.multimap,
+      required this.map,
+      required this.aSet,
+      required this.setMultimap})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(anInt, 'SimpleValue', 'anInt');
-    BuiltValueNullFieldError.checkNotNull(list, 'SimpleValue', 'list');
-    BuiltValueNullFieldError.checkNotNull(multimap, 'SimpleValue', 'multimap');
-    BuiltValueNullFieldError.checkNotNull(map, 'SimpleValue', 'map');
-    BuiltValueNullFieldError.checkNotNull(aSet, 'SimpleValue', 'aSet');
+    BuiltValueNullFieldError.checkNotNull(anInt, r'SimpleValue', 'anInt');
+    BuiltValueNullFieldError.checkNotNull(list, r'SimpleValue', 'list');
+    BuiltValueNullFieldError.checkNotNull(multimap, r'SimpleValue', 'multimap');
+    BuiltValueNullFieldError.checkNotNull(map, r'SimpleValue', 'map');
+    BuiltValueNullFieldError.checkNotNull(aSet, r'SimpleValue', 'aSet');
     BuiltValueNullFieldError.checkNotNull(
-        setMultimap, 'SimpleValue', 'setMultimap');
+        setMultimap, r'SimpleValue', 'setMultimap');
   }
 
   @override
@@ -73,7 +73,7 @@ class _$SimpleValue extends SimpleValue {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('SimpleValue')
+    return (newBuiltValueToStringHelper(r'SimpleValue')
           ..add('anInt', anInt)
           ..add('list', list)
           ..add('multimap', multimap)
@@ -85,35 +85,35 @@ class _$SimpleValue extends SimpleValue {
 }
 
 class SimpleValueBuilder implements Builder<SimpleValue, SimpleValueBuilder> {
-  _$SimpleValue _$v;
+  _$SimpleValue? _$v;
 
-  int _anInt;
-  int get anInt => _$this._anInt;
-  set anInt(int anInt) => _$this._anInt = anInt;
+  int? _anInt;
+  int? get anInt => _$this._anInt;
+  set anInt(int? anInt) => _$this._anInt = anInt;
 
-  ListBuilder<String> _list;
+  ListBuilder<String>? _list;
   ListBuilder<String> get list => _$this._list ??= new ListBuilder<String>();
-  set list(ListBuilder<String> list) => _$this._list = list;
+  set list(ListBuilder<String>? list) => _$this._list = list;
 
-  ListMultimapBuilder<int, bool> _multimap;
+  ListMultimapBuilder<int, bool>? _multimap;
   ListMultimapBuilder<int, bool> get multimap =>
       _$this._multimap ??= new ListMultimapBuilder<int, bool>();
-  set multimap(ListMultimapBuilder<int, bool> multimap) =>
+  set multimap(ListMultimapBuilder<int, bool>? multimap) =>
       _$this._multimap = multimap;
 
-  MapBuilder<String, int> _map;
+  MapBuilder<String, int>? _map;
   MapBuilder<String, int> get map =>
       _$this._map ??= new MapBuilder<String, int>();
-  set map(MapBuilder<String, int> map) => _$this._map = map;
+  set map(MapBuilder<String, int>? map) => _$this._map = map;
 
-  SetBuilder<int> _aSet;
+  SetBuilder<int>? _aSet;
   SetBuilder<int> get aSet => _$this._aSet ??= new SetBuilder<int>();
-  set aSet(SetBuilder<int> aSet) => _$this._aSet = aSet;
+  set aSet(SetBuilder<int>? aSet) => _$this._aSet = aSet;
 
-  SetMultimapBuilder<int, bool> _setMultimap;
+  SetMultimapBuilder<int, bool>? _setMultimap;
   SetMultimapBuilder<int, bool> get setMultimap =>
       _$this._setMultimap ??= new SetMultimapBuilder<int, bool>();
-  set setMultimap(SetMultimapBuilder<int, bool> setMultimap) =>
+  set setMultimap(SetMultimapBuilder<int, bool>? setMultimap) =>
       _$this._setMultimap = setMultimap;
 
   SimpleValueBuilder();
@@ -139,25 +139,27 @@ class SimpleValueBuilder implements Builder<SimpleValue, SimpleValueBuilder> {
   }
 
   @override
-  void update(void Function(SimpleValueBuilder) updates) {
+  void update(void Function(SimpleValueBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$SimpleValue build() {
+  SimpleValue build() => _build();
+
+  _$SimpleValue _build() {
     _$SimpleValue _$result;
     try {
       _$result = _$v ??
           new _$SimpleValue._(
               anInt: BuiltValueNullFieldError.checkNotNull(
-                  anInt, 'SimpleValue', 'anInt'),
+                  anInt, r'SimpleValue', 'anInt'),
               list: list.build(),
               multimap: multimap.build(),
               map: map.build(),
               aSet: aSet.build(),
               setMultimap: setMultimap.build());
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'list';
         list.build();
@@ -171,7 +173,7 @@ class SimpleValueBuilder implements Builder<SimpleValue, SimpleValueBuilder> {
         setMultimap.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'SimpleValue', _$failedField, e.toString());
+            r'SimpleValue', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -184,14 +186,14 @@ class _$CompoundValue extends CompoundValue {
   @override
   final SimpleValue simpleValue;
   @override
-  final String string;
+  final String? string;
 
-  factory _$CompoundValue([void Function(CompoundValueBuilder) updates]) =>
-      (new CompoundValueBuilder()..update(updates)).build();
+  factory _$CompoundValue([void Function(CompoundValueBuilder)? updates]) =>
+      (new CompoundValueBuilder()..update(updates))._build();
 
-  _$CompoundValue._({this.simpleValue, this.string}) : super._() {
+  _$CompoundValue._({required this.simpleValue, this.string}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        simpleValue, 'CompoundValue', 'simpleValue');
+        simpleValue, r'CompoundValue', 'simpleValue');
   }
 
   @override
@@ -216,7 +218,7 @@ class _$CompoundValue extends CompoundValue {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('CompoundValue')
+    return (newBuiltValueToStringHelper(r'CompoundValue')
           ..add('simpleValue', simpleValue)
           ..add('string', string))
         .toString();
@@ -225,17 +227,17 @@ class _$CompoundValue extends CompoundValue {
 
 class CompoundValueBuilder
     implements Builder<CompoundValue, CompoundValueBuilder> {
-  _$CompoundValue _$v;
+  _$CompoundValue? _$v;
 
-  SimpleValueBuilder _simpleValue;
+  SimpleValueBuilder? _simpleValue;
   SimpleValueBuilder get simpleValue =>
       _$this._simpleValue ??= new SimpleValueBuilder();
-  set simpleValue(SimpleValueBuilder simpleValue) =>
+  set simpleValue(SimpleValueBuilder? simpleValue) =>
       _$this._simpleValue = simpleValue;
 
-  String _string;
-  String get string => _$this._string;
-  set string(String string) => _$this._string = string;
+  String? _string;
+  String? get string => _$this._string;
+  set string(String? string) => _$this._string = string;
 
   CompoundValueBuilder();
 
@@ -256,25 +258,27 @@ class CompoundValueBuilder
   }
 
   @override
-  void update(void Function(CompoundValueBuilder) updates) {
+  void update(void Function(CompoundValueBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$CompoundValue build() {
+  CompoundValue build() => _build();
+
+  _$CompoundValue _build() {
     _$CompoundValue _$result;
     try {
       _$result = _$v ??
           new _$CompoundValue._(
               simpleValue: simpleValue.build(), string: string);
     } catch (_) {
-      String _$failedField;
+      late String _$failedField;
       try {
         _$failedField = 'simpleValue';
         simpleValue.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'CompoundValue', _$failedField, e.toString());
+            r'CompoundValue', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -289,13 +293,13 @@ class _$ComparedValue extends ComparedValue {
   @override
   final Function onChanged;
 
-  factory _$ComparedValue([void Function(ComparedValueBuilder) updates]) =>
-      (new ComparedValueBuilder()..update(updates)).build();
+  factory _$ComparedValue([void Function(ComparedValueBuilder)? updates]) =>
+      (new ComparedValueBuilder()..update(updates))._build();
 
-  _$ComparedValue._({this.name, this.onChanged}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(name, 'ComparedValue', 'name');
+  _$ComparedValue._({required this.name, required this.onChanged}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(name, r'ComparedValue', 'name');
     BuiltValueNullFieldError.checkNotNull(
-        onChanged, 'ComparedValue', 'onChanged');
+        onChanged, r'ComparedValue', 'onChanged');
   }
 
   @override
@@ -318,7 +322,7 @@ class _$ComparedValue extends ComparedValue {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ComparedValue')
+    return (newBuiltValueToStringHelper(r'ComparedValue')
           ..add('name', name)
           ..add('onChanged', onChanged))
         .toString();
@@ -327,15 +331,15 @@ class _$ComparedValue extends ComparedValue {
 
 class ComparedValueBuilder
     implements Builder<ComparedValue, ComparedValueBuilder> {
-  _$ComparedValue _$v;
+  _$ComparedValue? _$v;
 
-  String _name;
-  String get name => _$this._name;
-  set name(String name) => _$this._name = name;
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
-  Function _onChanged;
-  Function get onChanged => _$this._onChanged;
-  set onChanged(Function onChanged) => _$this._onChanged = onChanged;
+  Function? _onChanged;
+  Function? get onChanged => _$this._onChanged;
+  set onChanged(Function? onChanged) => _$this._onChanged = onChanged;
 
   ComparedValueBuilder();
 
@@ -356,21 +360,23 @@ class ComparedValueBuilder
   }
 
   @override
-  void update(void Function(ComparedValueBuilder) updates) {
+  void update(void Function(ComparedValueBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$ComparedValue build() {
+  ComparedValue build() => _build();
+
+  _$ComparedValue _build() {
     final _$result = _$v ??
         new _$ComparedValue._(
             name: BuiltValueNullFieldError.checkNotNull(
-                name, 'ComparedValue', 'name'),
+                name, r'ComparedValue', 'name'),
             onChanged: BuiltValueNullFieldError.checkNotNull(
-                onChanged, 'ComparedValue', 'onChanged'));
+                onChanged, r'ComparedValue', 'onChanged'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

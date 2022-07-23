@@ -1,5 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// @dart=2.11
 
 part of built_value_generator.source_field;
 
@@ -15,38 +14,41 @@ class _$SerializerSourceField extends SerializerSourceField {
   @override
   final FieldElement element;
   @override
-  final FieldElement builderElement;
-  bool __isSerializable;
-  BuiltValueField __builtValueField;
-  bool __isNonNullByDefault;
-  String __orNull;
-  bool __hasNullableAnnotation;
-  bool __hasNullableType;
-  bool __isNullable;
-  String __name;
-  String __wireName;
-  String __type;
-  String __typeWithNullabilitySuffix;
-  String __typeWithPrefix;
-  String __typeWithPrefixAndNullabilitySuffix;
-  bool __builderFieldUsesNestedBuilder;
-  bool __builderFieldAutoCreatesNestedBuilder;
-  String __rawType;
-  bool __needsBuilder;
+  final FieldElement? builderElement;
+  bool? __isSerializable;
+  BuiltValueField? __builtValueField;
+  bool? __isNonNullByDefault;
+  String? __orNull;
+  bool? __hasNullableAnnotation;
+  bool? __hasNullableType;
+  bool? __isNullable;
+  String? __name;
+  String? __wireName;
+  String? __type;
+  String? __typeWithNullabilitySuffix;
+  String? __typeWithPrefix;
+  String? __typeWithPrefixAndNullabilitySuffix;
+  bool? __builderFieldUsesNestedBuilder;
+  bool? __builderFieldAutoCreatesNestedBuilder;
+  String? __rawType;
+  bool? __needsBuilder;
 
   factory _$SerializerSourceField(
-          [void Function(SerializerSourceFieldBuilder) updates]) =>
-      (new SerializerSourceFieldBuilder()..update(updates)).build();
+          [void Function(SerializerSourceFieldBuilder)? updates]) =>
+      (new SerializerSourceFieldBuilder()..update(updates))._build();
 
   _$SerializerSourceField._(
-      {this.settings, this.parsedLibrary, this.element, this.builderElement})
+      {required this.settings,
+      required this.parsedLibrary,
+      required this.element,
+      this.builderElement})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        settings, 'SerializerSourceField', 'settings');
+        settings, r'SerializerSourceField', 'settings');
     BuiltValueNullFieldError.checkNotNull(
-        parsedLibrary, 'SerializerSourceField', 'parsedLibrary');
+        parsedLibrary, r'SerializerSourceField', 'parsedLibrary');
     BuiltValueNullFieldError.checkNotNull(
-        element, 'SerializerSourceField', 'element');
+        element, r'SerializerSourceField', 'element');
   }
 
   @override
@@ -138,7 +140,7 @@ class _$SerializerSourceField extends SerializerSourceField {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('SerializerSourceField')
+    return (newBuiltValueToStringHelper(r'SerializerSourceField')
           ..add('settings', settings)
           ..add('parsedLibrary', parsedLibrary)
           ..add('element', element)
@@ -149,24 +151,24 @@ class _$SerializerSourceField extends SerializerSourceField {
 
 class SerializerSourceFieldBuilder
     implements Builder<SerializerSourceField, SerializerSourceFieldBuilder> {
-  _$SerializerSourceField _$v;
+  _$SerializerSourceField? _$v;
 
-  BuiltValue _settings;
-  BuiltValue get settings => _$this._settings;
-  set settings(BuiltValue settings) => _$this._settings = settings;
+  BuiltValue? _settings;
+  BuiltValue? get settings => _$this._settings;
+  set settings(BuiltValue? settings) => _$this._settings = settings;
 
-  ParsedLibraryResult _parsedLibrary;
-  ParsedLibraryResult get parsedLibrary => _$this._parsedLibrary;
-  set parsedLibrary(ParsedLibraryResult parsedLibrary) =>
+  ParsedLibraryResult? _parsedLibrary;
+  ParsedLibraryResult? get parsedLibrary => _$this._parsedLibrary;
+  set parsedLibrary(ParsedLibraryResult? parsedLibrary) =>
       _$this._parsedLibrary = parsedLibrary;
 
-  FieldElement _element;
-  FieldElement get element => _$this._element;
-  set element(FieldElement element) => _$this._element = element;
+  FieldElement? _element;
+  FieldElement? get element => _$this._element;
+  set element(FieldElement? element) => _$this._element = element;
 
-  FieldElement _builderElement;
-  FieldElement get builderElement => _$this._builderElement;
-  set builderElement(FieldElement builderElement) =>
+  FieldElement? _builderElement;
+  FieldElement? get builderElement => _$this._builderElement;
+  set builderElement(FieldElement? builderElement) =>
       _$this._builderElement = builderElement;
 
   SerializerSourceFieldBuilder();
@@ -190,24 +192,26 @@ class SerializerSourceFieldBuilder
   }
 
   @override
-  void update(void Function(SerializerSourceFieldBuilder) updates) {
+  void update(void Function(SerializerSourceFieldBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$SerializerSourceField build() {
+  SerializerSourceField build() => _build();
+
+  _$SerializerSourceField _build() {
     final _$result = _$v ??
         new _$SerializerSourceField._(
             settings: BuiltValueNullFieldError.checkNotNull(
-                settings, 'SerializerSourceField', 'settings'),
+                settings, r'SerializerSourceField', 'settings'),
             parsedLibrary: BuiltValueNullFieldError.checkNotNull(
-                parsedLibrary, 'SerializerSourceField', 'parsedLibrary'),
+                parsedLibrary, r'SerializerSourceField', 'parsedLibrary'),
             element: BuiltValueNullFieldError.checkNotNull(
-                element, 'SerializerSourceField', 'element'),
+                element, r'SerializerSourceField', 'element'),
             builderElement: builderElement);
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

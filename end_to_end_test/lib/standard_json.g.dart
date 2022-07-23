@@ -116,7 +116,7 @@ class _$StandardJsonValue extends StandardJsonValue {
 
   factory _$StandardJsonValue(
           [void Function(StandardJsonValueBuilder) updates]) =>
-      (new StandardJsonValueBuilder()..update(updates)).build();
+      (new StandardJsonValueBuilder()..update(updates))._build();
 
   _$StandardJsonValue._(
       {this.number,
@@ -127,13 +127,13 @@ class _$StandardJsonValue extends StandardJsonValue {
       this.strings})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        number, 'StandardJsonValue', 'number');
-    BuiltValueNullFieldError.checkNotNull(text, 'StandardJsonValue', 'text');
+        number, r'StandardJsonValue', 'number');
+    BuiltValueNullFieldError.checkNotNull(text, r'StandardJsonValue', 'text');
     BuiltValueNullFieldError.checkNotNull(
-        keyValues, 'StandardJsonValue', 'keyValues');
-    BuiltValueNullFieldError.checkNotNull(zoo, 'StandardJsonValue', 'zoo');
+        keyValues, r'StandardJsonValue', 'keyValues');
+    BuiltValueNullFieldError.checkNotNull(zoo, r'StandardJsonValue', 'zoo');
     BuiltValueNullFieldError.checkNotNull(
-        uniqueZoo, 'StandardJsonValue', 'uniqueZoo');
+        uniqueZoo, r'StandardJsonValue', 'uniqueZoo');
   }
 
   @override
@@ -170,7 +170,7 @@ class _$StandardJsonValue extends StandardJsonValue {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('StandardJsonValue')
+    return (newBuiltValueToStringHelper(r'StandardJsonValue')
           ..add('number', number)
           ..add('text', text)
           ..add('keyValues', keyValues)
@@ -241,15 +241,17 @@ class StandardJsonValueBuilder
   }
 
   @override
-  _$StandardJsonValue build() {
+  StandardJsonValue build() => _build();
+
+  _$StandardJsonValue _build() {
     _$StandardJsonValue _$result;
     try {
       _$result = _$v ??
           new _$StandardJsonValue._(
               number: BuiltValueNullFieldError.checkNotNull(
-                  number, 'StandardJsonValue', 'number'),
+                  number, r'StandardJsonValue', 'number'),
               text: BuiltValueNullFieldError.checkNotNull(
-                  text, 'StandardJsonValue', 'text'),
+                  text, r'StandardJsonValue', 'text'),
               keyValues: keyValues.build(),
               zoo: zoo.build(),
               uniqueZoo: uniqueZoo.build(),
@@ -267,7 +269,7 @@ class StandardJsonValueBuilder
         _strings?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'StandardJsonValue', _$failedField, e.toString());
+            r'StandardJsonValue', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -276,4 +278,4 @@ class StandardJsonValueBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

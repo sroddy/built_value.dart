@@ -187,13 +187,13 @@ class _$ImportedValue extends ImportedValue {
   final BuiltList<prefix.SimpleValue> simpleValues;
 
   factory _$ImportedValue([void Function(ImportedValueBuilder) updates]) =>
-      (new ImportedValueBuilder()..update(updates)).build();
+      (new ImportedValueBuilder()..update(updates))._build();
 
   _$ImportedValue._({this.simpleValue, this.simpleValues}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        simpleValue, 'ImportedValue', 'simpleValue');
+        simpleValue, r'ImportedValue', 'simpleValue');
     BuiltValueNullFieldError.checkNotNull(
-        simpleValues, 'ImportedValue', 'simpleValues');
+        simpleValues, r'ImportedValue', 'simpleValues');
   }
 
   @override
@@ -218,7 +218,7 @@ class _$ImportedValue extends ImportedValue {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ImportedValue')
+    return (newBuiltValueToStringHelper(r'ImportedValue')
           ..add('simpleValue', simpleValue)
           ..add('simpleValues', simpleValues))
         .toString();
@@ -265,7 +265,9 @@ class ImportedValueBuilder
   }
 
   @override
-  _$ImportedValue build() {
+  ImportedValue build() => _build();
+
+  _$ImportedValue _build() {
     _$ImportedValue _$result;
     try {
       _$result = _$v ??
@@ -281,7 +283,7 @@ class ImportedValueBuilder
         simpleValues.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'ImportedValue', _$failedField, e.toString());
+            r'ImportedValue', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -303,9 +305,9 @@ class _$ImportedCustomValue extends ImportedCustomValue {
 
   _$ImportedCustomValue._({this.simpleValue, this.simpleValues}) : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        simpleValue, 'ImportedCustomValue', 'simpleValue');
+        simpleValue, r'ImportedCustomValue', 'simpleValue');
     BuiltValueNullFieldError.checkNotNull(
-        simpleValues, 'ImportedCustomValue', 'simpleValues');
+        simpleValues, r'ImportedCustomValue', 'simpleValues');
   }
 
   @override
@@ -332,7 +334,7 @@ class _$ImportedCustomValue extends ImportedCustomValue {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ImportedCustomValue')
+    return (newBuiltValueToStringHelper(r'ImportedCustomValue')
           ..add('simpleValue', simpleValue)
           ..add('simpleValues', simpleValues))
         .toString();
@@ -390,13 +392,15 @@ class _$ImportedCustomValueBuilder extends ImportedCustomValueBuilder {
   }
 
   @override
-  _$ImportedCustomValue build() {
+  ImportedCustomValue build() => _build();
+
+  _$ImportedCustomValue _build() {
     final _$result = _$v ??
         new _$ImportedCustomValue._(
             simpleValue: BuiltValueNullFieldError.checkNotNull(
-                simpleValue, 'ImportedCustomValue', 'simpleValue'),
+                simpleValue, r'ImportedCustomValue', 'simpleValue'),
             simpleValues: BuiltValueNullFieldError.checkNotNull(
-                simpleValues, 'ImportedCustomValue', 'simpleValues'));
+                simpleValues, r'ImportedCustomValue', 'simpleValues'));
     replace(_$result);
     return _$result;
   }
@@ -416,9 +420,9 @@ class _$ImportedCustomNestedValue extends ImportedCustomNestedValue {
   _$ImportedCustomNestedValue._({this.simpleValue, this.simpleValues})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        simpleValue, 'ImportedCustomNestedValue', 'simpleValue');
+        simpleValue, r'ImportedCustomNestedValue', 'simpleValue');
     BuiltValueNullFieldError.checkNotNull(
-        simpleValues, 'ImportedCustomNestedValue', 'simpleValues');
+        simpleValues, r'ImportedCustomNestedValue', 'simpleValues');
   }
 
   @override
@@ -445,7 +449,7 @@ class _$ImportedCustomNestedValue extends ImportedCustomNestedValue {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('ImportedCustomNestedValue')
+    return (newBuiltValueToStringHelper(r'ImportedCustomNestedValue')
           ..add('simpleValue', simpleValue)
           ..add('simpleValues', simpleValues))
         .toString();
@@ -504,7 +508,9 @@ class _$ImportedCustomNestedValueBuilder
   }
 
   @override
-  _$ImportedCustomNestedValue build() {
+  ImportedCustomNestedValue build() => _build();
+
+  _$ImportedCustomNestedValue _build() {
     _$ImportedCustomNestedValue _$result;
     try {
       _$result = _$v ??
@@ -520,7 +526,7 @@ class _$ImportedCustomNestedValueBuilder
         simpleValues.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'ImportedCustomNestedValue', _$failedField, e.toString());
+            r'ImportedCustomNestedValue', _$failedField, e.toString());
       }
       rethrow;
     }
@@ -529,4 +535,4 @@ class _$ImportedCustomNestedValueBuilder
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

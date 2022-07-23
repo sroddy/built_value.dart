@@ -12,10 +12,10 @@ class _$PrivateValue extends _PrivateValue {
   final int value;
 
   factory _$PrivateValue([void Function(_PrivateValueBuilder) updates]) =>
-      (new _PrivateValueBuilder()..update(updates)).build();
+      (new _PrivateValueBuilder()..update(updates))._build();
 
   _$PrivateValue._({this.value}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(value, '_PrivateValue', 'value');
+    BuiltValueNullFieldError.checkNotNull(value, r'_PrivateValue', 'value');
   }
 
   @override
@@ -38,7 +38,7 @@ class _$PrivateValue extends _PrivateValue {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('_PrivateValue')..add('value', value))
+    return (newBuiltValueToStringHelper(r'_PrivateValue')..add('value', value))
         .toString();
   }
 }
@@ -74,14 +74,16 @@ class _PrivateValueBuilder
   }
 
   @override
-  _$PrivateValue build() {
+  _PrivateValue build() => _build();
+
+  _$PrivateValue _build() {
     final _$result = _$v ??
         new _$PrivateValue._(
             value: BuiltValueNullFieldError.checkNotNull(
-                value, '_PrivateValue', 'value'));
+                value, r'_PrivateValue', 'value'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

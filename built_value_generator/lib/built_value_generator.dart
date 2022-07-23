@@ -1,7 +1,6 @@
 // Copyright (c) 2015, Google Inc. Please see the AUTHORS file for details.
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
-// @dart=2.11
 
 import 'package:analyzer/dart/element/element.dart';
 import 'package:build/build.dart';
@@ -18,7 +17,7 @@ class BuiltValueGenerator extends Generator {
   const BuiltValueGenerator();
 
   @override
-  Future<String> generate(LibraryReader library, BuildStep buildStep) async {
+  Future<String?> generate(LibraryReader library, BuildStep buildStep) async {
     // Workaround for https://github.com/google/built_value.dart/issues/941.
     LibraryElement libraryElement;
     var attempts = 0;
@@ -65,7 +64,7 @@ class BuiltValueGenerator extends Generator {
     for (var element in libraryElement.units.expand((unit) => unit.classes)) {
       if (ValueSourceClass.needsBuiltValue(element)) {
         try {
-          result.writeln(ValueSourceClass(element).generateCode() ?? '');
+          result.writeln(ValueSourceClass(element).generateCode());
         } catch (e, st) {
           result.writeln(_error(e));
           log.severe('Error in BuiltValueGenerator for $element.', e, st);
@@ -86,12 +85,14 @@ class BuiltValueGenerator extends Generator {
           'avoid_returning_this,'
           'deprecated_member_use_from_same_package,'
           'lines_longer_than_80_chars,'
+          'no_leading_underscores_for_local_identifiers,'
           'omit_local_variable_types,'
           'prefer_expression_function_bodies,'
           'sort_constructors_first,'
           'test_types_in_equals,'
           'unnecessary_const,'
-          'unnecessary_new';
+          'unnecessary_new,'
+          'unnecessary_lambdas';
     } else {
       return null;
     }

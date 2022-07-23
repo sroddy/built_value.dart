@@ -1,5 +1,4 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// @dart=2.11
 
 part of built_value_generator.source_class;
 
@@ -11,39 +10,40 @@ class _$SerializerSourceClass extends SerializerSourceClass {
   @override
   final ClassElement element;
   @override
-  final ClassElement builderElement;
-  ParsedLibraryResult __parsedLibrary;
-  BuiltValue __builtValueSettings;
-  bool __hasBuilder;
-  BuiltValueSerializer __serializerSettings;
-  BuiltValueEnum __enumClassSettings;
-  String __name;
-  bool __isNonNullByDefault;
-  String __orNull;
-  String __notNull;
-  String __wireName;
-  String __serializerDeclaration;
-  BuiltList<String> __genericParameters;
-  BuiltList<String> __genericBounds;
-  String __genericBoundsOrObjectString;
-  bool __isBuiltValue;
-  bool __isEnumClass;
-  BuiltList<SerializerSourceField> __fields;
-  BuiltSet<SerializerSourceClass> __fieldClasses;
-  CompilationUnitElement __compilationUnit;
-  String __serializerImplName;
-  String __serializerInstanceName;
-  bool __isSerializable;
-  bool __needsGeneratedSerializer;
-  String __implName;
+  final ClassElement? builderElement;
+  ParsedLibraryResult? __parsedLibrary;
+  BuiltValue? __builtValueSettings;
+  bool? __hasBuilder;
+  BuiltValueSerializer? __serializerSettings;
+  BuiltValueEnum? __enumClassSettings;
+  String? __name;
+  bool? __isNonNullByDefault;
+  String? __orNull;
+  String? __notNull;
+  String? __wireName;
+  String? __serializerDeclaration;
+  BuiltList<String>? __genericParameters;
+  BuiltList<String>? __genericBounds;
+  String? __genericBoundsOrObjectString;
+  bool? __isBuiltValue;
+  bool? __isEnumClass;
+  BuiltList<SerializerSourceField>? __fields;
+  BuiltSet<SerializerSourceClass>? __fieldClasses;
+  CompilationUnitElement? __compilationUnit;
+  String? __serializerImplName;
+  String? __serializerInstanceName;
+  bool? __isSerializable;
+  bool? __needsGeneratedSerializer;
+  String? __implName;
 
   factory _$SerializerSourceClass(
-          [void Function(SerializerSourceClassBuilder) updates]) =>
-      (new SerializerSourceClassBuilder()..update(updates)).build();
+          [void Function(SerializerSourceClassBuilder)? updates]) =>
+      (new SerializerSourceClassBuilder()..update(updates))._build();
 
-  _$SerializerSourceClass._({this.element, this.builderElement}) : super._() {
+  _$SerializerSourceClass._({required this.element, this.builderElement})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        element, 'SerializerSourceClass', 'element');
+        element, r'SerializerSourceClass', 'element');
   }
 
   @override
@@ -156,7 +156,7 @@ class _$SerializerSourceClass extends SerializerSourceClass {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('SerializerSourceClass')
+    return (newBuiltValueToStringHelper(r'SerializerSourceClass')
           ..add('element', element)
           ..add('builderElement', builderElement))
         .toString();
@@ -165,15 +165,15 @@ class _$SerializerSourceClass extends SerializerSourceClass {
 
 class SerializerSourceClassBuilder
     implements Builder<SerializerSourceClass, SerializerSourceClassBuilder> {
-  _$SerializerSourceClass _$v;
+  _$SerializerSourceClass? _$v;
 
-  ClassElement _element;
-  ClassElement get element => _$this._element;
-  set element(ClassElement element) => _$this._element = element;
+  ClassElement? _element;
+  ClassElement? get element => _$this._element;
+  set element(ClassElement? element) => _$this._element = element;
 
-  ClassElement _builderElement;
-  ClassElement get builderElement => _$this._builderElement;
-  set builderElement(ClassElement builderElement) =>
+  ClassElement? _builderElement;
+  ClassElement? get builderElement => _$this._builderElement;
+  set builderElement(ClassElement? builderElement) =>
       _$this._builderElement = builderElement;
 
   SerializerSourceClassBuilder();
@@ -195,20 +195,22 @@ class SerializerSourceClassBuilder
   }
 
   @override
-  void update(void Function(SerializerSourceClassBuilder) updates) {
+  void update(void Function(SerializerSourceClassBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$SerializerSourceClass build() {
+  SerializerSourceClass build() => _build();
+
+  _$SerializerSourceClass _build() {
     final _$result = _$v ??
         new _$SerializerSourceClass._(
             element: BuiltValueNullFieldError.checkNotNull(
-                element, 'SerializerSourceClass', 'element'),
+                element, r'SerializerSourceClass', 'element'),
             builderElement: builderElement);
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

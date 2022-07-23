@@ -1,7 +1,6 @@
 // Copyright (c) 2016, Google Inc. Please see the AUTHORS file for details.
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
-// @dart=2.11
 
 library built_value_generator.enum_source_class;
 
@@ -13,6 +12,8 @@ import 'package:built_value_generator/src/analyzer.dart';
 import 'package:built_value_generator/src/dart_types.dart';
 import 'package:built_value_generator/src/enum_source_field.dart';
 import 'package:built_value_generator/src/strings.dart';
+import 'package:collection/collection.dart'
+    show IterableExtension, IterableNullableExtension;
 import 'package:quiver/iterables.dart';
 
 part 'enum_source_class.g.dart';
@@ -40,11 +41,12 @@ abstract class EnumSourceClass
   BuiltValueEnum get settings {
     var annotations = element.metadata
         .map((annotation) => annotation.computeConstantValue())
-        .where((value) => DartTypes.getName(value?.type) == 'BuiltValueEnum');
+        .where(
+            (value) => DartTypes.tryGetName(value?.type) == 'BuiltValueEnum');
     if (annotations.isEmpty) return const BuiltValueEnum();
-    var annotation = annotations.single;
+    var annotation = annotations.single!;
     return BuiltValueEnum(
-        wireName: annotation.getField('wireName').toStringValue());
+        wireName: annotation.getField('wireName')?.toStringValue());
   }
 
   @memoized
@@ -58,14 +60,14 @@ abstract class EnumSourceClass
   BuiltList<String> get constructors =>
       BuiltList<String>(element.constructors.map((element) {
         final declaration = parsedLibrary.getElementDeclaration(element);
-        return declaration?.node?.toSource() ?? '';
+        return declaration?.node.toSource() ?? '';
       }));
 
   @memoized
-  String get valuesIdentifier {
+  String? get valuesIdentifier {
     var getter = element.getGetter('values');
     if (getter == null) return null;
-    var source = parsedLibrary.getElementDeclaration(getter).node.toSource();
+    var source = parsedLibrary.getElementDeclaration(getter)!.node.toSource();
     var matches = RegExp(r'static BuiltSet<' +
             element.displayName +
             r'> get values => (_\$\w+)\;')
@@ -74,13 +76,13 @@ abstract class EnumSourceClass
   }
 
   @memoized
-  String get valueOfIdentifier {
+  String? get valueOfIdentifier {
     var getter = element.getMethod('valueOf');
     if (getter == null) return null;
-    var source = parsedLibrary.getElementDeclaration(getter).node.toSource();
+    var source = parsedLibrary.getElementDeclaration(getter)!.node.toSource();
     var matches = RegExp(r'static ' +
             element.displayName +
-            r' valueOf\(String name\) \=\> (\_\$\w+)\(name\)\;')
+            r' valueOf\((?:final )?String name\) \=\> (\_\$\w+)\(name\)\;')
         .allMatches(source);
     return matches.isEmpty ? null : matches.first.group(1);
   }
@@ -89,23 +91,23 @@ abstract class EnumSourceClass
   bool get usesMixin => element.library.getType(name + 'Mixin') != null;
 
   @memoized
-  String get mixinDeclaration {
+  String? get mixinDeclaration {
     var mixinElement = element.library.getType(name + 'Mixin');
     if (mixinElement == null) return null;
-    return parsedLibrary.getElementDeclaration(mixinElement).node.toSource();
+    return parsedLibrary.getElementDeclaration(mixinElement)!.node.toSource();
   }
 
   @memoized
   Iterable<String> get identifiers {
     return concat([
-      [valuesIdentifier, valueOfIdentifier],
-      fields.map((field) => field.generatedIdentifier)
-    ]).where((identifier) => identifier != null).toList();
+      <String?>[valuesIdentifier, valueOfIdentifier],
+      fields.map<String?>((field) => field.generatedIdentifier)
+    ]).whereNotNull().toList();
   }
 
   static bool needsEnumClass(ClassElement classElement) {
     // `Object` and mixins return `null` for `supertype`.
-    return DartTypes.getName(classElement.supertype) == 'EnumClass';
+    return DartTypes.tryGetName(classElement.supertype) == 'EnumClass';
   }
 
   Iterable<String> computeErrors() {
@@ -143,11 +145,15 @@ abstract class EnumSourceClass
   }
 
   Iterable<String> _checkConstructor() {
-    var expectedCode = 'const $name._(String name) : super(name);';
+    var expectedCode =
+        RegExp('const $name._\\((?:final )?String name\\) : super\\(name\\);');
     return constructors.length == 1 &&
             constructors.single.contains(expectedCode)
         ? <String>[]
-        : <String>['Have exactly one constructor: $expectedCode'];
+        : <String>[
+            'Have exactly one constructor: '
+                'const $name._(String name) : super(name);'
+          ];
   }
 
   Iterable<String> _checkValuesGetter() {
@@ -171,7 +177,7 @@ abstract class EnumSourceClass
     if (usesMixin) {
       final expectedCode =
           'abstract class ${name}Mixin = Object with _\$${name}Mixin;';
-      if (!mixinDeclaration.contains(expectedCode)) {
+      if (!mixinDeclaration!.contains(expectedCode)) {
         return ['Remove mixin or declare using exactly: $expectedCode'];
       }
     }
@@ -195,8 +201,7 @@ abstract class EnumSourceClass
           ' return ${field.generatedIdentifier};');
     }
 
-    var fallback = fields.firstWhere((field) => field.settings.fallback,
-        orElse: () => null);
+    var fallback = fields.firstWhereOrNull((field) => field.settings.fallback);
     if (fallback == null) {
       result.writeln('default: throw new ArgumentError(name);');
     } else {
